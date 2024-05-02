@@ -1,17 +1,18 @@
 import React from "react";
 
-function Search() {
+const Search = ({ searchInput, onSearchInput }) => {
   return (
     <div className="searchbar">
       <label htmlFor="search">Search Plants:</label>
       <input
+        value={searchInput}
         type="text"
         id="search"
         placeholder="Type a name to search..."
-        onChange={(e) => console.log("Searching...")}
+        onChange={(e) => onSearchInput(e.target.value)}
       />
     </div>
   );
-}
+};
 
 export default Search;
